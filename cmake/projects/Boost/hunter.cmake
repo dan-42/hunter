@@ -148,6 +148,17 @@ hunter_add_version(
     e6bb97b5109c7c15ea459cf2b1a9d52cbf88a89e
 )
 
+hunter_add_version(
+    PACKAGE_NAME
+    Boost
+    VERSION
+    "1.71.0"
+    URL
+    "https://github.com/dan-42/boost/archive/v1.71.0.tar.gz"
+    SHA1
+    640848d89b2a36fb5cdf836579406a294b05441d
+)
+
 # up until 1.63 sourcefourge was used
 set(_hunter_boost_base_url "https://downloads.sourceforge.net/project/boost/boost/")
 hunter_add_version(
