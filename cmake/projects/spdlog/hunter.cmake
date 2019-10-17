@@ -101,12 +101,17 @@ hunter_add_version(
     PACKAGE_NAME
     spdlog
     VERSION
-    "1.4.2-p0"
+    "1.4.2-p1"
     URL
-    "https://github.com/dan-42/spdlog/archive/1.4.2-hunter.tar.gz"
+    "https://github.com/dan-42/spdlog/archive/hunter-1.4.2-v2.tar.gz"
     SHA1
-    567f7a6c3c11458a1243b69baed3ecf0e4a129db
+    ad14c245bfa68d5915908c44c25faa4fd551ab30
 )
+
+if(SPDLOG_FMT_EXTERNAL)
+
+hunter_add_package(fmt)
+find_package(fmt CONFIG REQUIRED)
 
 hunter_cmake_args(
     spdlog
@@ -116,7 +121,22 @@ hunter_cmake_args(
         SPDLOG_BUILD_TESTING=OFF
         SPDLOG_BUILD_TESTS=OFF
         SPDLOG_BUILD_BENCH=OFF
+        SPDLOG_FMT_EXTERNAL=ON
+        "CMAKE_PREFIX_PATH=${FMT_ROOT}"
+        "fmt_DIR=${FMT_ROOT}/lib/cmake/fmt"
 )
+else()
+  hunter_cmake_args(
+      spdlog
+      CMAKE_ARGS
+          SPDLOG_EXTERNAL_TOOLCHAIN=ON
+          SPDLOG_BUILD_EXAMPLES=OFF
+          SPDLOG_BUILD_TESTING=OFF
+          SPDLOG_BUILD_TESTS=OFF
+          SPDLOG_BUILD_BENCH=OFF          
+  )
+endif()
+
 
 hunter_pick_scheme(DEFAULT url_sha1_cmake)
 hunter_cacheable(spdlog)
