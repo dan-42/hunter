@@ -103,9 +103,9 @@ hunter_add_version(
     VERSION
     "1.4.2"
     URL
-    "https://github.com/gabime/spdlog/archive/v1.4.2.tar.gz"
+    "https://github.com/dan-42/spdlog/archive/v1.4.2-hunter2.tar.gz"
     SHA1
-    bad3caf7e4e1c2f299ccaaa8f56ff7edc0f36530
+    a76adedd078481f3f52adc2f0bea4e9a4c8e609b
 )
 
 
@@ -117,6 +117,7 @@ hunter_cmake_args(
         SPDLOG_BUILD_TESTING=OFF
         SPDLOG_BUILD_TESTS=OFF
         SPDLOG_BUILD_BENCH=OFF
+		SPDLOG_FMT_EXTERNAL=ON
 )
 
 hunter_pick_scheme(DEFAULT url_sha1_cmake)

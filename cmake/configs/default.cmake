@@ -466,6 +466,8 @@ hunter_default_version(sparsehash VERSION 2.0.2)
 if(MSVC_VERSION LESS 1800)
   # for VS12 - version without support C++11
   hunter_default_version(spdlog VERSION 1.0.0-p0)
+elseif(IOS)
+  hunter_default_version(spdlog VERSION 1.3.1-p0)
 else()
   hunter_default_version(spdlog VERSION 1.4.2)
 endif()
