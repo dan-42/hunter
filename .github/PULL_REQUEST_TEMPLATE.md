@@ -1,4 +1,8 @@
 <!--- Please check that your pull request satisfy all requirements -->
+* I have submitted CI configs to https://github.com/cpp-pm/hunter-testing targeting `pkg.template` branch,
+  see this merged pull request https://github.com/cpp-pm/hunter-testing/pull/<number>
+* My change will resolve this "New package" request: https://github.com/cpp-pm/hunter/issues/<number>
+  They are excluded in this pull request: https://github.com/cpp-pm/hunter-testing/pull/<number>
 
 * I have checked that this pull request contains only
   `.travis.yml`/`appveyor.yml` changes. All other changes send
