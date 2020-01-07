@@ -112,7 +112,7 @@ hunter_add_version(
     PACKAGE_NAME
     spdlog
     VERSION
-    "v1.4.2-58e6890-p0"
+    "1.4.2-58e6890-p0"
     URL
     "https://github.com/cpp-pm/spdlog/archive/v1.4.2-58e6890-p0.tar.gz"
     SHA1
